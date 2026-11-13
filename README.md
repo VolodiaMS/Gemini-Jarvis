@@ -1,3 +1,4 @@
+<img width="1104" height="621" alt="Снимок экрана — 2026-11-13 в 05 07 32" src="https://github.com/user-attachments/assets/187dd6a8-7d5a-44ff-a166-6b5dc9919480" />
 # Gemini Jarvis — AI Terminal Bridge
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)

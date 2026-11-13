@@ -3,6 +3,7 @@ import os
 import shutil
 import subprocess
 import sys
+import getpass
 from google import genai
 from google.genai import types
 
@@ -200,7 +201,7 @@ def main():
 
     system_instruction = (
         "Ты — Джарвис, персональный ИИ-ассистент из «Железного человека». "
-        "Обращайся к пользователю «Владимер» или «сэр». "
+        "Обращайся к пользователю «сэр» или по его системному имени. "
         "У тебя есть доступ к терминалу пользователя через execute_shell_command. "
         "Анализируй запросы, выполняй нужные команды и давай краткий, профессиональный технический отчет."
     )
@@ -221,7 +222,7 @@ def main():
         try:
             core_tag = "ARGON" if active_model == PRIMARY_MODEL else "LITE"
             prompt_str = (
-                f"\n{left_pad}\033[1;36mВладимер ({os.path.basename(CURRENT_DIR)}) "
+                f"\n{left_pad}\033[1;36m{getpass.getuser()} ({os.path.basename(CURRENT_DIR)}) "
                 f"\033[0;34m[{core_tag}]\033[1;36m > \033[0m"
             )
             user_input = input(prompt_str).strip()
